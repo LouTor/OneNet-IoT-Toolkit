@@ -1,0 +1,229 @@
+{
+    "profile": {
+        "videoPlay_remark": "videoPlay字段标识是否支持视频播放，1-是 0-否，默认0",
+        "video_remark": "video字段标识是否为视频类设备，1-是 0-否，默认0",
+        "video": 0,
+        "videoPlay": 0,
+        "status": 0,
+        "status_remark": "status字段标识导入的物模型状态，1-启用 0-禁用，默认0"
+    },
+    "services": [
+        {
+            "output": [
+                {
+                    "identifier": "rst",
+                    "dataType": {
+                        "specs": {
+                            "0": "成功",
+                            "1": "失败"
+                        },
+                        "type": "enum"
+                    },
+                    "name": "响应结果"
+                }
+            ],
+            "identifier": "svc",
+            "input": [
+                {
+                    "identifier": "cmd",
+                    "dataType": {
+                        "specs": {
+                            "0": "命令1",
+                            "1": "命令2"
+                        },
+                        "type": "enum"
+                    },
+                    "name": "下发命令"
+                }
+            ],
+            "name": "测试服务",
+            "functionType": "st",
+            "callType": "sync",
+            "desc": ""
+        }
+    ],
+    "properties": [
+        {
+            "identifier": "AlarmState",
+            "dataType": {
+                "specs": {
+                    "0": "正常",
+                    "1": "危险报警"
+                },
+                "type": "enum"
+            },
+            "name": "告警状态",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        },
+        {
+            "identifier": "BatteryLevel",
+            "dataType": {
+                "specs": {
+                    "unit": "百分比 / %",
+                    "min": "0",
+                    "max": "100",
+                    "step": ""
+                },
+                "type": "int32"
+            },
+            "name": "电池电量",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        },
+        {
+            "identifier": "GeoLocation",
+            "dataType": {
+                "specs": [
+                    {
+                        "identifier": "Longitude",
+                        "dataType": {
+                            "specs": {
+                                "length": 4
+                            },
+                            "type": "string"
+                        },
+                        "name": "经度"
+                    },
+                    {
+                        "identifier": "Altitude",
+                        "dataType": {
+                            "specs": {
+                                "unit": "",
+                                "min": "0",
+                                "max": "9999",
+                                "step": "0.01"
+                            },
+                            "type": "double"
+                        },
+                        "name": "海拔"
+                    },
+                    {
+                        "identifier": "Latitude",
+                        "dataType": {
+                            "specs": {
+                                "unit": "",
+                                "min": "-90",
+                                "max": "90",
+                                "step": ""
+                            },
+                            "type": "double"
+                        },
+                        "name": "纬度"
+                    }
+                ],
+                "type": "struct"
+            },
+            "name": "地理位置",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        },
+        {
+            "identifier": "arrTest",
+            "dataType": {
+                "specs": {
+                    "specs": {},
+                    "length": 3,
+                    "type": "date"
+                },
+                "type": "array"
+            },
+            "name": "数组测试",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        },
+        {
+            "identifier": "bitMapTest",
+            "dataType": {
+                "specs": {
+                    "length": 2,
+                    "define": [
+                        {
+                            "0": "00",
+                            "1": "01",
+                            "bit": 0
+                        },
+                        {
+                            "0": "10",
+                            "1": "11",
+                            "bit": 1
+                        }
+                    ]
+                },
+                "type": "bitMap"
+            },
+            "name": "位图测试2位",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        },
+        {
+            "identifier": "strTest",
+            "dataType": {
+                "specs": {
+                    "length": 32
+                },
+                "type": "string"
+            },
+            "name": "字符串测试",
+            "functionType": "st",
+            "accessMode": "rw",
+            "desc": ""
+        }
+    ],
+    "events": [
+        {
+            "outputData": [
+                {
+                    "identifier": "ErrorCode",
+                    "dataType": {
+                        "specs": {
+                            "0": "无故障",
+                            "1": "故障"
+                        },
+                        "type": "enum"
+                    },
+                    "name": "故障代码"
+                },
+                {
+                    "identifier": "teststru",
+                    "dataType": {
+                        "specs": [
+                            {
+                                "identifier": "json1",
+                                "dataType": {
+                                    "specs": {
+                                        "length": 4
+                                    },
+                                    "type": "string"
+                                },
+                                "name": "json1"
+                            },
+                            {
+                                "identifier": "json2",
+                                "dataType": {
+                                    "specs": {
+                                        "length": 4
+                                    },
+                                    "type": "string"
+                                },
+                                "name": "json2"
+                            }
+                        ],
+                        "type": "struct"
+                    },
+                    "name": "测试参数"
+                }
+            ],
+            "identifier": "Error",
+            "name": "故障上报",
+            "functionType": "st",
+            "eventType": "info",
+            "desc": ""
+        }
+    ]
+}
