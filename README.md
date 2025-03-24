@@ -1,3 +1,5 @@
+# 暂未开发完成，仅供参考，即将更新
+
 ##快速开始
 
 1. 克隆仓库
@@ -29,14 +31,3 @@ pytest tests/
 pyinstaller --onefile src/iot_converter/main.py
 ```
 
-## 常见问题
-Q：GUI无法启动？
-A：需安装wx等图形库
-
-Q：依赖冲突？
-A：建议使用虚拟环境：
-```bash
-python -m venv .venv
-source .venv/bin/activate  # Linux/macOS
-.venv\Scripts\activate     # Windows
-```

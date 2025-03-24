@@ -1,6 +1,7 @@
-# 服务层调用
-from core.converters import ConverterFactory
+# 服务层调用 暴露接口为convert
+from ..core.converters import ConverterFactory
 from .version_detector import VersionDetector
+
 
 class ConversionService:
     @staticmethod
