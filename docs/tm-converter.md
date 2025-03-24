@@ -15,7 +15,7 @@
 
 ### 安装依赖
 ```bash
-cd iot-converter
+cd iot-core
 pip install -r requirements.txt
 ```
 
@@ -35,6 +35,6 @@ DISPLAY=:0 python -m iot_converter.main --gui
 
 ### Docker启动
 ```bash
-docker build -t iot-converter -f ../tools-config/Dockerfile .
-docker run -it --rm iot-converter
+docker build -t iot-core -f ../tools-config/Dockerfile .
+docker run -it --rm iot-core
 ```

@@ -1,5 +1,6 @@
-from core.converters.base_converter import BaseConverter
-from core.models.intermediate import *
+from ..core.converters.base_converter import BaseConverter
+from ..core.models.intermediate import *
+
 
 class FuseAdapter(BaseConverter):
     def to_intermediate(self, raw_data):

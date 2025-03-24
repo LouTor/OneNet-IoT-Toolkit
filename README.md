@@ -1,5 +1,9 @@
 # 暂未开发完成，仅供参考，即将更新
 
+## 环境
+
+python：须3.10以上
+
 ##快速开始
 
 1. 克隆仓库
@@ -9,7 +13,7 @@ git clone https://github.com/yourname/repository-root.git
 
 2. 安装工具A（IoT转换器）
 ```bash
-cd repository-root/iot-converter
+cd repository-root/iot-core
 pip install -r requirements.txt
 ```
 
@@ -30,4 +34,8 @@ pytest tests/
 # 生成可执行文件（Windows）
 pyinstaller --onefile src/iot_converter/main.py
 ```
+
+
+
+
 

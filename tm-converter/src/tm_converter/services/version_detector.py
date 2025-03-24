@@ -4,7 +4,7 @@ class VersionDetector:
     def detect(data: dict) -> str:
         # 根据特征检测版本
         if 'combs' in data:
-            return "1.0"
+            return "fuse"
         if 'stTmId' in data.get('profile', {}):
             return "2.x"
         if any(prop.get('functionType') == 'st' for prop in data.get('properties', [])):
