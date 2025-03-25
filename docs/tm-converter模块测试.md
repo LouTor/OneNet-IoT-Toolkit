@@ -33,6 +33,24 @@ input path:`tm-converter/tests/json_tms/xxx.json`
 ## V30Converter
 `python -m tm-converter.tests.adapters.V30Converter`
 
+### Error：circular import：
+
+修改version_factory，**动态导入**adapters模块解决
+
+### Error：Field required
+
+原因：
+
+pydantic库报错；`IntermediateModel`模型初始化时缺失`services`和`events`两个必填字段，Pydantic在数据验证过程中发现缺失。
+
+解决：
+
+在def to_intermediate内创建实例时加上        services=src_data.get('services', []),         events=src_data.get('events', []),
+
+测试结果：中间模型的json数据
+
+
+
 
 
 

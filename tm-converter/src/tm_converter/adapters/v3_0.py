@@ -8,11 +8,22 @@ class V30Converter(BaseConverter):
         # 处理v3.0特有字段到中间模型
         profile = raw_data.get('profile', {})
         # 处理video相关字段...
-
+        '''
+        # debug
+        intermediate_model = IntermediateModel(
+            profile=profile,
+            properties=[cls._convert_property(p) for p in raw_data['properties']],
+            services=raw_data.get('services', []),
+            events=raw_data.get('events', [])
+        )
+        print(f"中间模型内容：{intermediate_model}\n中间模型数据类型：{type(intermediate_model)}")
+        return intermediate_model
+        '''
         return IntermediateModel(
             profile=profile,
             properties=[cls._convert_property(p) for p in raw_data['properties']],
-            # ...其他字段转换
+            services=raw_data.get('services', []),
+            events=raw_data.get('events', [])
         )
 
     @staticmethod

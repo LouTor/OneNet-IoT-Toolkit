@@ -15,7 +15,7 @@ class ConverterFactory:
         adapter_class_name = cls.version_map.get(version)
         if not adapter_class_name:
             raise ValueError(f"Version Error: {version}")
-        # 动态导入适配器模块
+        # 动态导入adapters模块
         adapter_module = import_module("tm_converter.adapters")
         adapter_class = getattr(adapter_module, adapter_class_name)
         return adapter_class()
