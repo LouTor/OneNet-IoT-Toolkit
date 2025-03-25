@@ -30,8 +30,12 @@ input path:`tm-converter/tests/json_tms/xxx.json`
 | 1.2  |    √     |
 | fuse |    √     |
 
-## V30Converter
-`python -m tm-converter.tests.adapters.V30Converter`
+## Adapters
+`python -m tm-converter.tests.adapters.V30Adapter`
+
+`python -m tm-converter.tests.adapters.VFuseAdapter`
+
+...
 
 ### Error：circular import：
 

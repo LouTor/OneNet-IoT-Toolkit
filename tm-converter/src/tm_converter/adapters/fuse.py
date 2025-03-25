@@ -3,24 +3,27 @@ from ..core.models.intermediate import *
 
 
 class FuseAdapter(BaseConverter):
-    def to_intermediate(self, raw_data):
+    @classmethod
+    def to_intermediate(cls, raw_data):
         # 处理FUSE特有字段（如combs）
         return IntermediateModel(
             version=raw_data.get('version'),
             profile=raw_data['profile'],
-            properties=[self._convert_property(p) for p in raw_data['properties']],
+            properties=[cls._convert_property(p) for p in raw_data['properties']],
             services=raw_data['services'],
             events=raw_data['events'],
             combs=raw_data.get('combs', [])
         )
 
-    def _convert_property(self, prop):
+    @staticmethod
+    def _convert_property(prop):
         # 处理FUSE的required字段
         if 'required' in prop:
             del prop['required']
         return PropertyModel(**prop)
 
-    def from_intermediate(self, intermediate):
+    @classmethod
+    def from_intermediate(cls, intermediate):
         output = intermediate.dict(exclude_unset=True)
         # 还原FUSE特有结构
         output['combs'] = []
