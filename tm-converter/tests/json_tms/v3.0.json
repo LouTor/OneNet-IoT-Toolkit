@@ -45,17 +45,17 @@
     "properties": [
         {
             "identifier": "AlarmState",
-            "dataType": {
-                "specs": {
-                    "0": "正常",
-                    "1": "危险报警"
-                },
-                "type": "enum"
-            },
             "name": "告警状态",
             "functionType": "st",
             "accessMode": "rw",
-            "desc": ""
+            "desc": "",
+            "dataType": {
+                "type": "enum",
+                "specs": {
+                    "0": "正常",
+                    "1": "危险报警"
+                }
+            }
         },
         {
             "identifier": "BatteryLevel",

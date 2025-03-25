@@ -10,7 +10,6 @@ class DataSpecs(BaseModel):
     unit: Optional[str] = None
     length: Optional[int] = None
     define: Optional[List[Dict]] = None
-    # 其他可能字段...
 
 
 class DataType(BaseModel):
@@ -22,14 +21,15 @@ class PropertyModel(BaseModel):
     identifier: str
     name: str
     functionType: str
+    accessMode: str
+    desc: Optional[str] = None
     dataType: DataType
-    # ...其他字段
 
 
 class IntermediateModel(BaseModel):
-    version: Optional[str] = None
-    profile: Dict = None
-    properties: List[PropertyModel] = None
-    services: List[Dict]
-    events: List[Dict]
-    combs: Optional[List] = None
+    # version: Optional[str] = None
+    # profile: Dict = None
+    properties: List[PropertyModel] = []
+    services: List[Dict] = []
+    events: List[Dict] = []
+    #combs: Optional[List] = None

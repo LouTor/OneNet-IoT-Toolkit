@@ -1,0 +1,21 @@
+{
+  "properties" : [ {
+    "identifier" : "temp",
+    "name" : "温度",
+    "functionType" : "u",
+    "accessMode" : "rw",
+    "functionMode" : "property",
+    "desc" : null,
+    "dataType" : {
+      "type" : "float",
+      "specs" : {
+        "min" : "0",
+        "max" : "99999",
+        "unit" : null,
+        "step" : null
+      }
+    }
+  } ],
+  "events" : [ ],
+  "services" : [ ]
+}

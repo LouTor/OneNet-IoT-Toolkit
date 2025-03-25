@@ -4,7 +4,6 @@
     "name" : "告警状态",
     "functionType" : "u",
     "accessMode" : "rw",
-    "functionMode" : "property",
     "desc" : null,
     "dataType" : {
       "type" : "enum",
@@ -12,7 +11,8 @@
         "0" : "正常",
         "1" : "危险报警"
       }
-    }
+    },
+    "functionMode" : "property"
   }, {
     "identifier" : "BatteryLevel",
     "name" : "电池电量",
