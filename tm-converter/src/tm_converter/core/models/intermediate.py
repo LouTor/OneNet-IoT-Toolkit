@@ -14,7 +14,7 @@ class DataSpecs(BaseModel):
 
 
 class DataType(BaseModel):
-    type: str
+    type: str = None
     specs: DataSpecs | List[Dict]  # 兼容数组/对象
 
 
@@ -28,8 +28,8 @@ class PropertyModel(BaseModel):
 
 class IntermediateModel(BaseModel):
     version: Optional[str] = None
-    profile: Dict
-    properties: List[PropertyModel]
+    profile: Dict = None
+    properties: List[PropertyModel] = None
     services: List[Dict]
     events: List[Dict]
     combs: Optional[List] = None

@@ -28,5 +28,5 @@ class V2xAdapter(BaseConverter):
     def from_intermediate(cls, intermediate):
         output = intermediate.dict(exclude_unset=True)
         # 保持v2.x格式
-        output.profile.stTmId = ""  # 添加v2.x特有字段
+        # output.profile.stTmId = ""  # 添加v2.x特有字段
         return output
