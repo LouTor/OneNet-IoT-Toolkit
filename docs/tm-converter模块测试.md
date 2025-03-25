@@ -47,9 +47,15 @@ pydantic库报错；`IntermediateModel`模型初始化时缺失`services`和`eve
 
 在def to_intermediate内创建实例时加上        services=src_data.get('services', []),         events=src_data.get('events', []),
 
-测试结果：中间模型的json数据
+### TypeError: 'PropertyModel' object does not support item assignment
 
+原因：
 
+intermediateModel是pydantic模型，不能使用字典的形式赋值。修改from_intermediate中的赋值方式即可。
+
+### 测试结果：
+
+输出intermediate model(pydantic Model)和output data(dict)内容
 
 
 

@@ -2,7 +2,7 @@ from ..core.converters.base_converter import BaseConverter
 from ..core.models.intermediate import *
 
 
-class V30Converter(BaseConverter):
+class V30Adapter(BaseConverter):
     @classmethod
     def to_intermediate(cls, raw_data):
         # 处理v3.0特有字段到中间模型
@@ -44,7 +44,7 @@ class V30Converter(BaseConverter):
         }
         # 处理functionType转换
         for prop in output['properties']:
-            prop['functionType'] = 'st'
+            prop.functionType = 'st'
         return output
 
     @staticmethod
