@@ -2,19 +2,9 @@ from pydantic import BaseModel
 from typing import List, Dict, Optional
 
 
-class DataSpecs(BaseModel):
-    # 通用specs结构
-    max: Optional[str] = None
-    min: Optional[str] = None
-    step: Optional[str] = None
-    unit: Optional[str] = None
-    length: Optional[int] = None
-    define: Optional[List[Dict]] = None
-
-
 class DataType(BaseModel):
     type: str = None
-    specs: DataSpecs | List[Dict]  # 兼容数组/对象
+    specs: Dict | List[Dict]
 
 
 class PropertyModel(BaseModel):
@@ -26,10 +16,17 @@ class PropertyModel(BaseModel):
     dataType: DataType
 
 
+class ServicesModel(BaseModel):
+    identifier: str
+    name: str
+    functionType: str
+    callType: str
+    desc: str
+    input: Dict | List[Dict]
+    output: Dict | List[Dict]
+
+
 class IntermediateModel(BaseModel):
-    # version: Optional[str] = None
-    # profile: Dict = None
     properties: List[PropertyModel] = []
-    services: List[Dict] = []
+    services: List[ServicesModel] = []
     events: List[Dict] = []
-    #combs: Optional[List] = None
