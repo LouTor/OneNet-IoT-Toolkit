@@ -1,5 +1,4 @@
-# 文件操作工具
-
+# 文件操作
 import json
 
 def load_json(file_path):
