@@ -27,5 +27,4 @@ def gain_path(path) -> str:
     file_name = os.path.splitext(os.path.basename(path))[0]  # 获取完整文件名元组的元素[0] 不含拓展名的文件名
     tm_converted_path = os.path.join(os.path.dirname(path), f"{self.ver}-{file_name}.json")
     """
-
     pass

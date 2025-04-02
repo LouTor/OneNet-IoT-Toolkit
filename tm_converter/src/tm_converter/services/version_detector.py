@@ -1,4 +1,3 @@
-# 自动版本检测
 class VersionDetector:
     @staticmethod
     def detect(data: dict) -> str:

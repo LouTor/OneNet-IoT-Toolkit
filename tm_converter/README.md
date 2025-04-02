@@ -35,24 +35,31 @@ git clone https://github.com/LouTor/OneNet-IoT-Toolkit.git
 
 2.安装依赖
 ```bash
+cd tm_converter
 pip install -r requirements.txt
 ```
 
 3.打包可执行文件(可选，界面操作)
 
 ```bash
-cd tm_converter/src/tm_converter  # 进入main.py目录
+cd tm_converter/src/tm_converter
 pyinstaller --onefile --noconsole main.py
 ```
 打包好的可执行文件: dist/main.exe
 
 4.数据处理接口(可选)
-`tm_converter.src.tm_converter.services.conversion_service.ConversionService,convert`
+`tm_converter.src.tm_converter.services.conversion_service.ConversionService.convert`
 
 ```python
+from tm_converter.src.tm_converter.services.conversion_service import ConversionService
+from tm_converter.src.tm_converter.utils.file_utils import load_json
+
 input_data = load_json("原版本json文件路径")
 output = ConversionService.convert(input_data, "源版本", "目标版本")
 ```
+参数详见方法注释
+
+
 
 
 
