@@ -176,6 +176,7 @@ cython_debug/
 
 
 # liutao
-README_bak.md
+tm_converter/requirements.txt
+tm_converter/README_bak.md
 app.log
 main.spec
