@@ -1,6 +1,0 @@
-wxPython==4.2.2
-pydantic==2.10.6
-
-
-# 本地共享库(暂未启用)
-# -e ../shared-libs/common_utils
