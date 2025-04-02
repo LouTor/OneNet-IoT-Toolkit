@@ -14,11 +14,15 @@ class VersionDetector:
         return "unknown"
 
     @staticmethod
-    def select(data: dict) -> str:
+    def select(data: str) -> str:
         version_mapping = {
             "融合平台(开放平台)": "fuse",
             "城市平台v1.2": "1.2",
             "城市平台v2.x": "2.x",
-            "城市平台v3.0": "3.0"
+            "城市平台v3.0": "3.0",
+            "fuse": "fuse",
+            "1.2": "1.2",
+            "2.x": "2.x",
+            "3.0": "3.0"
         }
-        return version_mapping.get(VersionDetector.detect(data), "unknown")
+        return version_mapping.get(data)
