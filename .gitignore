@@ -179,3 +179,4 @@ cython_debug/
 README_bak.md
 app.log
 main.spec
+tools-config
