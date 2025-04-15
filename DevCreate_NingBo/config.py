@@ -8,4 +8,3 @@ class Config:
     usr_key = 'usr_key'
     PID = 'PID'
     devname = 'devname'
-

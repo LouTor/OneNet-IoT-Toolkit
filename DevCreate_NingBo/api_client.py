@@ -7,7 +7,8 @@ from auth import auth_usr
 def send_request(row):
     payload = {
         "product_id": str(row['PID']),
-        "device_name": str(row['devname'])
+        "device_name": str(row['devname']),
+        "desc": str(row['original_devname'])  # 新增desc字段
     }
     url = f"http://{Config.IP}:{Config.PORT}/common?action=CreateDevice&version=1"
     headers = {"Authorization": auth_usr(row['UID'], row['usr_key'])}
