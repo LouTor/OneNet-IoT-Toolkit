@@ -6,4 +6,3 @@ if __name__ == "__main__":
     frame = FrameAction(None)
     frame.Show()
     app.MainLoop()
-

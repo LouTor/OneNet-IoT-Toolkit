@@ -26,7 +26,7 @@ GUI界面使用：Windows
 | 版本1.2  |   ✅ 成功    |   ✅ 成功    |      —      |    ✅ 成功    |
 | 版本fuse |   ✅ 成功    |   ✅ 成功    |   ✅ 成功    |      —       |
 
-##快速开始
+## 快速开始
 
 1. 克隆仓库
 ```bash
@@ -45,6 +45,9 @@ pip install -r requirements.txt
 cd tm_converter/src/tm_converter
 pyinstaller --onefile --noconsole main.py
 ```
+pyinstaller可能出现包缺失报错，原因是pyinstaller的动态导入识别问题，解决方式如下：
+在main.spec中的`a = Analysis`下加入`hiddenimports=['pydantic']`后重新打包：`pyinstaller main.spec`
+
 打包好的可执行文件: dist/main.exe
 
 4.数据处理接口(可选)

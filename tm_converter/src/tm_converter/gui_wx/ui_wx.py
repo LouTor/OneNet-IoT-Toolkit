@@ -150,6 +150,3 @@ class MyFrame ( wx.Frame ):
 
 	def suggestion(self, event):
 		event.Skip()
-
-
-
