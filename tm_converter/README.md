@@ -3,6 +3,7 @@
 25/5/6 v2.1
 1.修复目标版本为3.0时，字符串功能点length长度超过限制长度的问题
 2.修正帮助文档的github链接 正确指向README文档
+
 *******************************************
 25/3/30 v2.0
 1.代码重构：
@@ -54,20 +55,21 @@ cd tm_converter
 pip install -r requirements.txt
 ```
 
-3.打包可执行文件(可选，界面操作)
+3.打包为可执行文件(可选，UI界面操作)
 
 ```bash
 cd tm_converter/src/tm_converter
-pyinstaller --onefile --noconsole main.py
+pyinstaller .\tm_converter\src\tm_converter\main.spec
 ```
-pyinstaller可能出现包缺失报错，原因是pyinstaller的动态导入识别问题，解决方式如下：
-在main.spec中的`a = Analysis`下加入`hiddenimports=['pydantic']`后重新打包：`pyinstaller main.spec`
+直接打包会出现包缺失报错，原因是pyinstaller的动态导入识别问题，解决方式如下：
+在main.spec中的`a = Analysis`下加入`hiddenimports=['pydantic']`后重新打包；
 
 打包好的可执行文件: dist/main.exe
 
-4.数据处理接口(可选)
+4.数据处理接口(可选， 只数据处理，不用UI)
 `tm_converter.src.tm_converter.services.conversion_service.ConversionService.convert`
 
+简易调用示例：
 ```python
 from tm_converter.src.tm_converter.services.conversion_service import ConversionService
 from tm_converter.src.tm_converter.utils.file_utils import load_json
