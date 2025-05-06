@@ -56,12 +56,12 @@ class FrameAction(MyFrame):
             wx.MessageBox(f"打开路径失败：{str(e)}", "错误", wx.OK | wx.ICON_ERROR)
 
     def help_document(self, event):
-        url = 'https://github.com/LouTor/OneNet-IoT-Toolkit/blob/main/tm-converter/README.md'
+        url = 'https://github.com/LouTor/OneNet-IoT-Toolkit/blob/main/tm_converter/README.md'
         if not wx.LaunchDefaultBrowser(url):
             wx.MessageBox("无法启动浏览器", "错误", wx.OK | wx.ICON_ERROR)
 
     def help_downloadAddress(self, event):
-        url = 'https://github.com/LouTor/OneNet-IoT-Toolkit/blob/main/tm-converter/README.md'
+        url = 'https://github.com/LouTor/OneNet-IoT-Toolkit/blob/main/tm_converter/README.md'
         if not wx.LaunchDefaultBrowser(url):
             wx.MessageBox("无法启动浏览器", "错误", wx.OK | wx.ICON_ERROR)
 

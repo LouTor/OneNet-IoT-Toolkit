@@ -150,3 +150,38 @@ class BaseConverter(ABC):
         if isinstance(data, dict):
             return process_entry(data)
         return data
+
+    @staticmethod
+    def length_limit(data, dst: int = 200):
+        """
+        递归处理所有层级的 dataType.specs.length，解决 v3.0 的 string 类型 length 默认限制为 200 导致的报错问题。
+
+        :param data: 输入的完整物模型字典（如 v3.0.json 内容）。
+        :param dst: int, 可选，默认值为 200。当 specs["length"] 超过 200 时，将其替换为 dst 的值。
+        :return: 转换后的字典。
+        """
+
+        def process_entry(entry):
+            # 处理单个条目中的 dataType
+            if "dataType" in entry:
+                data_type = entry["dataType"].get("type")
+                specs = entry["dataType"].get("specs")
+
+                if isinstance(specs, dict) and "length" in specs:
+                    if specs["length"] > 200:
+                        specs["length"] = dst
+
+                if data_type == "struct" and isinstance(specs, list):
+                    for item in specs:
+                        process_entry(item)
+
+            for key in ["properties", "services", "events", "input", "output", "outputData"]:
+                if key in entry and isinstance(entry[key], list):
+                    for sub_item in entry[key]:
+                        process_entry(sub_item)
+            return entry
+
+        # 从根节点开始处理
+        if isinstance(data, dict):
+            return process_entry(data)
+        return data

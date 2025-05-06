@@ -8,6 +8,7 @@ class V30Adapter(BaseConverter):
         cls.func_type(output, "st")
         cls.desc(output, "ept")
         cls.call_type(output, "full")
+        cls.length_limit(output, 200)
         return output
 
 
